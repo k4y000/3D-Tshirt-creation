@@ -28,7 +28,7 @@ const Home = () => {
                     </motion.header>
                     <motion.div className="home-content" {...headContainerAnimation}>
                         <h1 className="head-text">
-                            3D T Shirt<br className="xl:block hidden"/> Balance ton logo !
+                            3D T Shirt<br/> Balance ton logo !
                         </h1>
                     </motion.div>
                     <motion.div 
@@ -36,8 +36,8 @@ const Home = () => {
                         className='flex flex-col gap-5'
                     >
                         <p className="max-w-md font-normal text-gray-600 text-base">
-                            Personnaliser votre t-Shirt grace à l'IA
-                            <strong>Et d'autres trucs</strong>{" "} puis c'est tout... Il y a rien d'autres à faire ici...
+                            Personnalise ton t-Shirt grace à l'IA
+                            <strong> Et d'autres trucs</strong>{" "} puis c'est tout... Il y a rien d'autres à faire ici...
                         </p>
                         <CustomButton
                             type="filled"
