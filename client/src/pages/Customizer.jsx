@@ -24,18 +24,24 @@ const Customizer = () => {
         stylishShirt: false,
     })
 
+    let currentEditorTab = ""
 
     // show tab content depending on the activeTab
     const generateTabContent = () => {
-        switch (activeEditorTab) {
-            case "colorpicker":
-                return <ColorPicker/>
-            case "filepicker":
-                return <FilePicker file={file} setFile={setFile} readFile={readFile} />
-            case "aipicker":
-            return <AIPicker prompt={prompt} setPrompt={setPrompt} generatingImg={generatingImg} handleSubmit={handleSubmit}/>
-            default:
-                return null;
+        if(activeEditorTab != currentEditorTab ) {
+            currentEditorTab = activeEditorTab;
+            switch (activeEditorTab) {
+                case "colorpicker":
+                    return <ColorPicker/>
+                case "filepicker":
+                    return <FilePicker file={file} setFile={setFile} readFile={readFile} />
+                case "aipicker":
+                    return <AIPicker prompt={prompt} setPrompt={setPrompt} generatingImg={generatingImg} handleSubmit={handleSubmit}/>
+                default:
+                    return null;
+            }
+        } else {
+            return null;
         }
     }
 
@@ -44,7 +50,7 @@ const Customizer = () => {
 
         try {
            setGeneratingImg(true);
-           const response = await fetch('http://localhost:8080/api/v1/dalle', {
+           const response = await fetch('https://3d-tshirt-server.vercel.app/api/v1/dalle', {
                 method:"POST",
                 headers: {
                     'Content-Type': 'application/json'

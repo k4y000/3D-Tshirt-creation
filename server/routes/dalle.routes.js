@@ -1,9 +1,7 @@
-import express from 'express';
-import * as dotenv from 'dotenv';
+const express = require('express');
+const dotenv = require('dotenv').config();
 
-import OpenAI from 'openai';
-
-dotenv.config();
+const OpenAI = require('openai');
 
 const router = express.Router();
 
@@ -12,9 +10,16 @@ const openai = new OpenAI({
     dangerouslyAllowBrowser: true,
 });
 
-router.route('/').get((req, res) => {
-    res.status(200).json({message: "Hello you !"})
-})
+var cors = require('cors')
+var corsOptions = {
+    origin: "https://3-d-tshirt-creation-client.vercel.app",
+    optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
+  }
+
+router.use(cors(corsOptions));
+
+
+export const maxDuration = 45; // This function can run for a maximum of 25 seconds
 
 router.route('/').post( async (req, res) => {
     try {
@@ -27,7 +32,6 @@ router.route('/').post( async (req, res) => {
             model:"dall-e-3",
         });
 
-        console.dir(response.data)
         if(response.data.status) {
             res.status(response.data.status).json({ error: response.data.error })
         } else {
@@ -42,4 +46,4 @@ router.route('/').post( async (req, res) => {
 })
 
 
-export default router;
+module.exports = router;
