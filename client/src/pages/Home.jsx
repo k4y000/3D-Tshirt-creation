@@ -28,7 +28,7 @@ const Home = () => {
                     </motion.header>
                     <motion.div className="home-content" {...headContainerAnimation}>
                         <h1 className="head-text">
-                            LET'S <br className="xl:block hidden"/> DO IT.
+                            3D T Shirt<br className="xl:block hidden"/> Balance ton logo !
                         </h1>
                     </motion.div>
                     <motion.div 
@@ -36,12 +36,12 @@ const Home = () => {
                         className='flex flex-col gap-5'
                     >
                         <p className="max-w-md font-normal text-gray-600 text-base">
-                            Create your unique and exclusive shirt with our brand-new 3D customization tool.
-                            <strong>Unleash you imagination</strong>{" "}and define your own style
+                            Personnaliser votre t-Shirt grace à l'IA
+                            <strong>Et d'autres trucs</strong>{" "} puis c'est tout... Il y a rien d'autres à faire ici...
                         </p>
                         <CustomButton
                             type="filled"
-                            title="Customize It"
+                            title="Let's begin !"
                             handleClick={() => state.intro = false}
                             customStyles="w-fit px-4 py-2.5 font-blod text-sm"
                         />
