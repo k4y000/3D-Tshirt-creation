@@ -28,7 +28,7 @@ const Home = () => {
                     </motion.header>
                     <motion.div className="home-content" {...headContainerAnimation}>
                         <h1 className="head-text">
-                            3D T Shirt<br/> Balance ton logo !
+                            3D T Shirt<br/> Avec l'IA !
                         </h1>
                     </motion.div>
                     <motion.div 
